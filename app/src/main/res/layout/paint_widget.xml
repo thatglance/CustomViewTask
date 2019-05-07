@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="214dp"
+        android:layout_height="156dp"
+        android:padding="8dp"
+        android:background="@color/colorBackground"
+        tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <TextView
+            android:id="@+id/widthLabel"
+            android:text="@string/width_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+            android:id="@+id/widthValue"
+            tools:text="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/widthLabel"/>
+    <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/widthLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:min="1"
+    />
+    <TextView
+            android:id="@+id/colorsLabel"
+            android:text="@string/colors_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar"
+            android:layout_margin="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/colorsGroup"/>
+    <RadioGroup
+            android:id="@+id/colorsGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+    >
+        <com.epam.training.customviewtask.ColoredRadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:focusable="true" android:clickable="true"/>
+        <com.epam.training.customviewtask.ColoredRadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                app:color="@android:color/holo_red_dark"
+                android:clickable="true" android:focusable="true"/>
+        <com.epam.training.customviewtask.ColoredRadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                app:color="@android:color/holo_green_dark"
+                android:focusable="true" android:clickable="true"/>
+        <com.epam.training.customviewtask.ColoredRadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                app:color="@android:color/holo_blue_dark"
+                android:clickable="true" android:focusable="true"/>
+    </RadioGroup>
+
+</merge>

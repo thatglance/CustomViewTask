@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PaintWidget">
+        <attr name="maxWidth" format="integer"/>
+        <attr name="defaultColorPosition" format="integer"/>
+        <attr name="firstItemColor" format="enum">
+            <enum name="MAROON" value="0xFF800000"/>
+            <enum name="TEAL" value="0xFF008080"/>
+            <enum name="PURPLE" value="0xFF663398"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ColoredRadioButton">
+        <attr name="color" format="color"/>
+    </declare-styleable>
+</resources>

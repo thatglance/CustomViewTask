@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CustomViewTask</string>
+    <string name="width_label">Width:</string>
+    <string name="colors_label">Colors:</string>
+    <string name="show_paint_widget">Show paint widget</string>
+    <string name="toast_width_changed">Seek bar value changed to %1$d.</string>
+    <string name="toast_color_changed">Color changed.</string>
+</resources>
