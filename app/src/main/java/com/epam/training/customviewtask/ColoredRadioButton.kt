@@ -14,14 +14,9 @@ import androidx.appcompat.widget.AppCompatRadioButton
  */
 class ColoredRadioButton(context: Context, attrs: AttributeSet?) : AppCompatRadioButton(context, attrs) {
 
-    private var checkCirclePaint = Paint()
-    private var colorCirclePaint = Paint()
+    private val paint = Paint()
 
     var color: Int = Color.BLACK
-        set(value) {
-            field = value
-            colorCirclePaint.color = value
-        }
 
     init {
         attrs?.let {
@@ -30,18 +25,13 @@ class ColoredRadioButton(context: Context, attrs: AttributeSet?) : AppCompatRadi
             attributes?.recycle()
         }
 
-        checkCirclePaint.color = Color.GRAY
-        checkCirclePaint.style = Paint.Style.FILL
-        colorCirclePaint.color = color
-        colorCirclePaint.style = Paint.Style.FILL
+        paint.style = Paint.Style.FILL
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val desiredWidth = 20 + 3 + 3
-        val desiredHeight = 20 + 3 + 3
         setMeasuredDimension(
-            measureDimension(desiredWidth, widthMeasureSpec),
-            measureDimension(desiredHeight, heightMeasureSpec)
+            measureDimension(DESIRED_WIDTH, widthMeasureSpec),
+            measureDimension(DESIRED_HEIGHT, heightMeasureSpec)
         )
     }
 
@@ -58,8 +48,15 @@ class ColoredRadioButton(context: Context, attrs: AttributeSet?) : AppCompatRadi
 
     override fun onDraw(canvas: Canvas?) {
         if (isChecked) {
-            canvas?.drawCircle(width / 2f, height / 2f, height * 3 / 8f, checkCirclePaint)
+            paint.color = Color.GRAY
+            canvas?.drawCircle(width / 2f, height / 2f, height * 3 / 8f, paint)
         }
-        canvas?.drawCircle(width / 2f, height / 2f, height / 3.5f, colorCirclePaint)
+        paint.color = color
+        canvas?.drawCircle(width / 2f, height / 2f, height / 3.5f, paint)
+    }
+
+    companion object {
+        private const val DESIRED_WIDTH = 26
+        private const val DESIRED_HEIGHT = 26
     }
 }
