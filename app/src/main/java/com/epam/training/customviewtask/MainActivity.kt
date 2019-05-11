@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity(), PaintWidget.OnPaintWidgetChangeListene
             val paintWidget = findViewById<PaintWidget>(R.id.paintWidget)
             paintWidget.isVisible = isChecked
         }
-
-        findViewById<PaintWidget>(R.id.paintWidget).paintWidgetListener = this
     }
 
     override fun onWidthChanged(newWidth: Int?) {
